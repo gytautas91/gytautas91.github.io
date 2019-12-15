@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.69fb2e36.chunk.css",
-    "main.js": "/static/js/main.6259ed29.chunk.js",
-    "main.js.map": "/static/js/main.6259ed29.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9c996d25.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9c996d25.js.map",
-    "static/css/2.ff29e5f6.chunk.css": "/static/css/2.ff29e5f6.chunk.css",
-    "static/js/2.43a466cd.chunk.js": "/static/js/2.43a466cd.chunk.js",
-    "static/js/2.43a466cd.chunk.js.map": "/static/js/2.43a466cd.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.196a5fa4547b05ba07099d732077fdbe.js": "/precache-manifest.196a5fa4547b05ba07099d732077fdbe.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.ff29e5f6.chunk.css.map": "/static/css/2.ff29e5f6.chunk.css.map",
-    "static/css/main.69fb2e36.chunk.css.map": "/static/css/main.69fb2e36.chunk.css.map",
-    "static/js/2.43a466cd.chunk.js.LICENSE": "/static/js/2.43a466cd.chunk.js.LICENSE"
+    "main.css": "/ns-xmas/static/css/main.69fb2e36.chunk.css",
+    "main.js": "/ns-xmas/static/js/main.b13747ec.chunk.js",
+    "main.js.map": "/ns-xmas/static/js/main.b13747ec.chunk.js.map",
+    "runtime-main.js": "/ns-xmas/static/js/runtime-main.c8ee884b.js",
+    "runtime-main.js.map": "/ns-xmas/static/js/runtime-main.c8ee884b.js.map",
+    "static/css/2.ff29e5f6.chunk.css": "/ns-xmas/static/css/2.ff29e5f6.chunk.css",
+    "static/js/2.43a466cd.chunk.js": "/ns-xmas/static/js/2.43a466cd.chunk.js",
+    "static/js/2.43a466cd.chunk.js.map": "/ns-xmas/static/js/2.43a466cd.chunk.js.map",
+    "index.html": "/ns-xmas/index.html",
+    "precache-manifest.53b88b80874eec06939a7ca9bb6852d4.js": "/ns-xmas/precache-manifest.53b88b80874eec06939a7ca9bb6852d4.js",
+    "service-worker.js": "/ns-xmas/service-worker.js",
+    "static/css/2.ff29e5f6.chunk.css.map": "/ns-xmas/static/css/2.ff29e5f6.chunk.css.map",
+    "static/css/main.69fb2e36.chunk.css.map": "/ns-xmas/static/css/main.69fb2e36.chunk.css.map",
+    "static/js/2.43a466cd.chunk.js.LICENSE": "/ns-xmas/static/js/2.43a466cd.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.9c996d25.js",
+    "static/js/runtime-main.c8ee884b.js",
     "static/css/2.ff29e5f6.chunk.css",
     "static/js/2.43a466cd.chunk.js",
     "static/css/main.69fb2e36.chunk.css",
-    "static/js/main.6259ed29.chunk.js"
+    "static/js/main.b13747ec.chunk.js"
   ]
 }

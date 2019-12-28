@@ -2,9 +2,12 @@
   <img width="250" src="public/logo512.png">
 </p>
 <h1 align="center"> Web Analyzer </h1>
+<p align="center">
+  <b >Currently at very very early stage</b>
+</p>
 
 ## Description :
-We analyzer helps you to find unique tags, most commonly used tag, lognest path from root to the descendent and from root node the most popular tag is used the most times in HTML document.
+Web analyzer helps you to find unique tags, most commonly used tag, lognest path from root to the descendent and from root node the most popular tag is used the most times in HTML document.
 
 ## Installation
 

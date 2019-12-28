@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="250" src="/public/logo512.png">
+  <img width="250" src="public/logo512.png">
 </p>
 <h1 align="center"> Web Analyzer </h1>
 

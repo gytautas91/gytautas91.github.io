@@ -1,17 +1,17 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   CssBaseline,
-  Typography,
-  Button,
-  Grid,
   makeStyles,
+  ThemeProvider,
 } from '@material-ui/core';
 import {
-  URLField,
   Report,
+  AppForm,
 } from './components';
 import logo from './logo.png';
+import theme from './theme';
+import uniqueId from './utils/unique-id';
 
 const useStyles = makeStyles(({ spacing }) => ({
   container: {
@@ -27,95 +27,54 @@ const useStyles = makeStyles(({ spacing }) => ({
   }
 }));
 
-const DEFAULT_PAGE = 'https://revelsystems.com/';
-
-function validateUrl(url) {
-  let validUrl = /^(?:(?:https?):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.?\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[?6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1?,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00?a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u?00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i;
-  return validUrl.test(url);
+function createReport(id, url, onDelete) {
+  return ({ id, url, onDelete });
 }
 
 function App() {
   const classes = useStyles();
   const [reports, setReports] = useState([]);
-  const [urlFieldValue, setUrlFieldValue] = useState(DEFAULT_PAGE);
-  const [error, setError] = useState(null);
 
-  const handleAnalyze = (e) => {
-    e.preventDefault();
-    if (reports.indexOf(urlFieldValue) !== -1) {
-      setError('Provided url already exists')
-    } else if (!validateUrl(urlFieldValue)) {
-      setError('You must enter valid url')
-    }
+  const handleAnalyze = (url) => {
+    const id = uniqueId();
+    const onDelete = () => handleDeleteReport(id);
 
-    setReports([urlFieldValue, ...reports]);
-    setUrlFieldValue('');
+    setReports([
+      createReport(id, url, onDelete),
+      ...reports
+    ]);
   }
 
-  const handleUrlChange = (e) => {
-    setError(null);
-    setUrlFieldValue(e.target.value);
+  const handleDeleteReport = (id) => {
+    setReports(reports.filter((report) => report.id !== id));
   }
 
-  const handleDeleteReport = (index) => {
-    setReports(reports.filter((_, i) => i !== index));
-  }
-
-  const handleClearReports = (e) => {
+  const handleClearReports = () => {
     setReports([]);
   }
 
   return (
-    <Fragment>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container className={classes.container}>
         <img className={classes.logo} src={logo} alt="logo" />
-        <form onSubmit={handleAnalyze}>
-
-          <Typography variant="h2" align="center">Web analyzer</Typography>
-          <URLField
-            error={error}
-            autoFocus
-            onChange={handleUrlChange}
-            placeholder="Type a URL"
-            value={urlFieldValue}
-          />
-          <Grid className={classes.buttons} container spacing={4} justify="center">
-            <Grid item>
-              <Button
-                type="submit"
-                disabled={urlFieldValue.length === 0}
-                variant="contained"
-                color="primary"
-              >
-                Analyze
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button
-                disabled={reports.length === 0}
-                variant="contained"
-                color="secondary"
-                onClick={handleClearReports}
-              >
-                Clear reports
-              </Button>
-            </Grid>
-          </Grid>
-          <div className={classes.reportList}>
-            {
-              reports.map((link, i) => (
-                <Report
-                  key={link}
-                  link={link}
-                  onDelete={() => handleDeleteReport(i)}
-                />
-              ))
-            }
-          </div>
-        </form>
+        <AppForm
+          onSubmit={handleAnalyze}
+          onClearReports={handleClearReports}
+          disableClearReports={reports.length === 0}
+        />
+        <div>
+          {
+            reports.map((report, i) => (
+              <Report
+                key={report.id}
+                {...report}
+              />
+            ))
+          }
+        </div>
       </Container>
-    </Fragment>
+    </ThemeProvider>
   );
 }
 

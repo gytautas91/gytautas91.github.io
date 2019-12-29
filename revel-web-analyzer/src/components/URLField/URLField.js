@@ -10,7 +10,7 @@ import {
 } from '@material-ui/icons';
 import cc from 'classcat';
 
-const useStyles = makeStyles(({ spacing }) => ({
+const useStyles = makeStyles(({ spacing, palette }) => ({
   container: {
     display: 'flex',
     padding: `${spacing(1)}px ${spacing(2)}px`,
@@ -22,11 +22,14 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
   error: {
     '& > *': {
-      color: 'red',
+      color: palette.error.main,
     },
     '& > $container': {
-      border: '1px solid red',
+      border: `1px solid ${palette.error.main}`,
     }
+  },
+  icon: {
+    fill: palette.primary.main,
   },
   errorMessage: {
     marginTop: `${spacing(1)}px`,
@@ -36,6 +39,7 @@ const useStyles = makeStyles(({ spacing }) => ({
 function URLField(props) {
   const { error } = props;
   const classes = useStyles();
+  
   const rootClasses = cc([{
     [classes.error]: error,
   }, classes.root]);
@@ -43,7 +47,7 @@ function URLField(props) {
   return (
     <div className={rootClasses}>
       <Paper className={classes.container}>
-        <WebIcon />
+        <WebIcon className={classes.icon} />
         <InputBase
           className={classes.input}
           {...props}

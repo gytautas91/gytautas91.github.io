@@ -3,15 +3,19 @@
 </p>
 <h1 align="center"> Web Analyzer </h1>
 
-## Description :
-We analyzer helps you to find unique tags, most commonly used tag, lognest path from root to the descendent and from root node the most popular tag is used the most times in HTML document.
+Web analyzer helps you to find unique tags, most commonly used tag, lognest path from root node to the descendent and longest path from root node with most commonly used tag within the path in HTML document.
 
 ## Installation
 
-```npm install```
+Run ```npm install && npm link``` or ```npm install``` if you are planning to use CLI
 
-## Usage
+## Usage options
 
-1. ```npm start``` will build application and start local server on ```127.0.0.1:8080```. If there is a need to be custom about host or port, it's possible to change that in ```.env``` file.
+Once you have dependencies installed you use one of the options to start: 
 
-2. You may use cli ```analyze``` with url as argument ```analyze --url=https://revelsystems.com/``` to get analysis but not in pretty way.
+1. ```npm start``` will build react application and serve it over local server on ```127.0.0.1:8080/```. 
+> If there is a need to be custom about host or port, it's possible to change that in ```.env``` file.
+
+2. CLI command ```analyze``` with url as argument. For exmaple ```analyze --url=https://revelsystems.com/```. This option works independently from server.
+
+3. Start server by running ```npm start:server``` and use ```curl```, ```postman``` to request for results. For example ```curl 127.0.0.1:8080/analyze?url=https://revelsystems.com/```

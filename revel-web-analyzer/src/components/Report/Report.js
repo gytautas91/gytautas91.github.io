@@ -2,7 +2,6 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import axios from 'axios';
 import {
   IconButton,
   Typography,
@@ -10,12 +9,15 @@ import {
   makeStyles,
   Grid,
 } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
 import ReportItem from './ReportItem';
 import ReportItemList from './ReportItemList';
 import ReportTag from './ReportTag';
 import {
   Delete as DeleteIcon,
 } from '@material-ui/icons';
+import uniqueId from '../../utils/unique-id';
+import makeRequest from '../../utils/request-handler';
 
 const useStyles = makeStyles(({ spacing }) => ({
   root: {
@@ -23,7 +25,7 @@ const useStyles = makeStyles(({ spacing }) => ({
     padding: `${spacing(2)}px`,
   },
   url: {
-    color: '#2196f3',
+    color: blue[500],
     display: 'block',
   },
   deleteIcon: {
@@ -36,32 +38,44 @@ const useStyles = makeStyles(({ spacing }) => ({
 const renderPath = (pathToRender) => (
   pathToRender && <>
     {pathToRender.map((item) => (
-      <ReportTag>{item}</ReportTag>
+      <ReportTag key={uniqueId()}>{item}</ReportTag>
     ))}
   </>
 );
 
 function Report(props) {
-  const { link, onDelete } = props;
+  const { url, onDelete } = props;
   const [loading, setLoading] = useState(true);
-  const [report, setReport] = useState({});
+  const [report, setReport] = useState({
+    uniqueTags: [],
+    lognestPathFromRoot: [],
+    lognestPathFromRootWithCommonlyUsedTag: [],
+    mostCommonlyUsedTag: '',
+  });
+
+  const {
+    uniqueTags,
+    lognestPathFromRoot,
+    lognestPathFromRootWithCommonlyUsedTag,
+    mostCommonlyUsedTag,
+  } = report;
 
   const classes = useStyles();
 
   useEffect(() => {
     async function analyze() {
       try {
-        console.log('requesting');
-        const response = await axios(`${window.location.origin}/analyze?url=${link}`);
+        const data = await makeRequest(`/analyze?url=${url}`)
         setLoading(false);
-        setReport(response.data);
+        setReport(data);
       } catch (e) {
         alert(e);
         onDelete();
       }
     }
     analyze();
-  }, [link, onDelete]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
   return (
@@ -69,13 +83,15 @@ function Report(props) {
       <Grid container alignItems="center">
         <Grid item xs>
           <Typography
-            href={link}
+            href={url}
             target="_blank"
             component="a"
             className={classes.url}
             noWrap
             variant="h5"
-          >{link}</Typography>
+          >
+            {url}
+          </Typography>
         </Grid>
         <Grid item xs={1} container justify="flex-end" >
           <IconButton disabled={loading} aria-label="delete" onClick={onDelete}>
@@ -85,16 +101,24 @@ function Report(props) {
       </Grid>
 
       <ReportItemList loading={loading}>
-        <ReportItem label={`Unique tags (count: ${(report.uniqueTags || []).length})`}>
-          {renderPath(report.uniqueTags)}
+        <ReportItem
+          label={`Unique tags (count: ${uniqueTags.length})`}
+        >
+          {renderPath(uniqueTags)}
         </ReportItem>
-        <ReportItem label="Most commonly used tag">
-          <ReportTag>{report.mostCommonlyUsedTag || ''}</ReportTag>
+        <ReportItem
+          label="Most commonly used tag"
+        >
+          <ReportTag>{mostCommonlyUsedTag}</ReportTag>
         </ReportItem>
-        <ReportItem label={`Longest path from root (length: ${(report.lognestPathFromRoot || []).length})`}>
-          {renderPath(report.lognestPathFromRoot)}
+        <ReportItem
+          label={`Longest path from root (length: ${lognestPathFromRoot.length})`}
+        >
+          {renderPath(lognestPathFromRoot)}
         </ReportItem>
-        <ReportItem label={`Longest path from root with most commonly used tag within the path (length: ${(report.lognestPathFromRootWithCommonlyUsedTag || []).length})`}>
+        <ReportItem
+          label={`Longest path from root with most commonly used tag within the path (length: ${lognestPathFromRootWithCommonlyUsedTag.length})`}
+        >
           {renderPath(report.lognestPathFromRootWithCommonlyUsedTag)}
         </ReportItem>
       </ReportItemList>

@@ -16,6 +16,13 @@ const {
 } = require('./test-data');
 
 describe('HTML in JSON analyzer module', () => {
+  test('analyzer function should all be functions', () => {
+    expect(typeof walkThru).toBe('function');
+    expect(typeof getLongestPath).toBe('function');
+    expect(typeof getUniqueTags).toBe('function');
+    expect(typeof getMostFrequentTag).toBe('function');
+  });
+
   test('walkThru should accept callback and return path and nodes', () => {
     const returnedPaths = [];
     const retunedNodes = [];
@@ -36,7 +43,6 @@ describe('HTML in JSON analyzer module', () => {
     expect(returnedPaths).toEqual([]);
   });
 
-
   test('walkThru should return two paths from root to last element', () => {
     const expectedResult = [
       [
@@ -53,7 +59,7 @@ describe('HTML in JSON analyzer module', () => {
     expect(returnedPaths).toStrictEqual(expectedResult);
   });
 
-  test('getLongestPath should return correct path in tag names', () => {
+  test('getLongestPath should return correct longest path in array of tag names', () => {
     expect(getLongestPath(testTreeWithTwoDivs)).toEqual(['div', 'div']);
     expect(getLongestPath(commonTestTree)).toEqual(['div', 'span', 'div']);
   });

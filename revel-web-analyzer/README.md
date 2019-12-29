@@ -1,7 +1,10 @@
 <p align="center">
-  <img width="250" src="/public/logo512.png">
+  <img width="250" src="public/logo512.png">
 </p>
 <h1 align="center"> Web Analyzer </h1>
+<p align="center">
+  <b >Currently at very very early stage</b>
+</p>
 
 Web analyzer helps you to find unique tags, most commonly used tag, lognest path from root node to the descendent and longest path from root node with most commonly used tag within the path in HTML document.
 

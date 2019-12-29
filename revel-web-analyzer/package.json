@@ -52,5 +52,6 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ]
-  }
+  },
+  "devDependencies": {}
 }

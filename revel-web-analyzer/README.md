@@ -1,12 +1,9 @@
 <p align="center">
-  <img width="250" src="public/logo512.png">
+  <img width="250" src="/public/logo512.png">
 </p>
 <h1 align="center"> Web Analyzer </h1>
-<p align="center">
-  <b >Currently at very very early stage</b>
-</p>
 
-Web analyzer helps you to find unique tags, most commonly used tag, lognest path from root node to the descendent and longest path from root node with most commonly used tag within the path in HTML document.
+Web analyzer helps you to find unique tags, most commonly used tag, lognest path from root node to the descendant and longest path from root node with most commonly used tag within the path in HTML document.
 
 ## Installation
 
@@ -22,3 +19,4 @@ Once you have dependencies installed you use one of the options to start:
 2. CLI command ```analyze``` with url as argument. For exmaple ```analyze --url=https://revelsystems.com/```. This option works independently from server.
 
 3. Start server by running ```npm start:server``` and use ```curl```, ```postman``` to request for results. For example ```curl 127.0.0.1:8080/analyze?url=https://revelsystems.com/```
+

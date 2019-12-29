@@ -24,7 +24,7 @@ const useStyles = makeStyles(({ spacing }) => ({
     width: 220,
     margin: `${spacing(2)}px auto`,
     display: 'block',
-  }
+  },
 }));
 
 function createReport(id, url, onDelete) {
@@ -41,7 +41,7 @@ function App() {
 
     setReports([
       createReport(id, url, onDelete),
-      ...reports
+      ...reports,
     ]);
   }
 
@@ -65,11 +65,8 @@ function App() {
         />
         <div>
           {
-            reports.map((report, i) => (
-              <Report
-                key={report.id}
-                {...report}
-              />
+            reports.map((report) => (
+              <Report key={report.id} {...report} />
             ))
           }
         </div>

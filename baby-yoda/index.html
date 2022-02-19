@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Baby Yoda - The Mandalorian</title>
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Meddon&family=Poller+One&family=Roboto:wght@300;400;500;900&display=swap">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/stars.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flare.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/saber.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/starwars-glyphicons.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <ul id="menu">
+        <li data-menuanchor="home">
+            <a href="#home">
+                <i class="swg swg-3x swg-mandalorian"></i>
+                Home
+            </a>
+        </li>
+        <li data-menuanchor="about-me">
+            <a href="#about-me">
+                <i class="swg swg-3x swg-yoda-3"></i>
+                About me
+            </a>
+        </li>
+        <li data-menuanchor="activity">
+            <a href="#activity">
+                <i class="swg swg-3x swg-lightsabers-2"></i>
+                Recent activity
+            </a>
+        </li>
+        <li data-menuanchor="contact-me">
+            <a href="#contact-me">
+                <i class="swg swg-3x swg-newjediorder"></i>
+                Contact me
+            </a>
+        </li>
+    </ul>
+
+
+    <div class="brand-logo">
+        <img alt="Baby Yoda" src="assets/images/logo.png" />
+    </div>
+
+
+    <div id="fullpage">
+
+        <div class="section home-section">
+            <div class="slide">
+                <div class="stars"></div>
+                <div class="stars2"></div>
+                <div class="stars3"></div>
+
+                <h1>baby yoda </h1>
+                <h3>The Mandalorian</h3>
+            </div>
+        </div>
+
+        <div class="section about-me-section">
+            <div class="saber"></div>
+            <div class="about-me-container">
+                <div class="about-me-picture"></div>
+                <div class="about-me-description">
+                    <div class="stars"></div>
+                    <div class="stars2"></div>
+                    <div class="stars3"></div>
+
+                    <div class="about-me-content">
+                        <div class="about-me-content-point">
+                            <span>Born</span>
+                            41 BBY (Before the Battle of Yavin)
+                        </div>
+                        <div class="about-me-content-point">
+                            <span>Gender</span>
+                            Male (He/Him)
+                        </div>
+                        <div class="about-me-content-point">
+                            <span>Pilot license</span>
+                            Spacecraft B
+                        </div>
+
+                        <div class="about-me-content-point">
+                            <span>Education</span>
+                            Master degree in the force <br /> at university of New Jedi Order
+                        </div>
+
+                        <div class="about-me-content-point">
+                            <span>Skills</span>
+                            <ul>
+                                <li>Giving hugs with appropriate pressure <br /> and for the right length of time</li>
+                                <li>Can eat a large pizza alone</li>
+                                <li>Really good at hiding double chin in pictures</li>
+                                <li>Always up for dessert</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section activity-section">
+            <div class="slide activity-picture-piramid">
+                <div class="activity-description">
+                    Playing around with a pyramid which looks like tesseract from movie the avengers
+                </div>
+                <div class="light">
+                    <div class="flare one">
+                        <div class="flare two">
+                            <div class="flare five"></div>
+                            <div class="flare six"></div>
+                            <div class="flare three">
+                                <div class="flare four">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide activity-picture-party">
+                <div class="activity-description">
+                    Promoting work life balance
+                </div>
+            </div>
+        </div>
+
+        <div class="section contact-section">
+            <div class="contact-section-signature">baby yoda </div>
+            <div class="contact-section-sm-container contact-section-flex">
+                <div class="contact-section-sm contact-section-flex delay-2s">
+                    <span class="fa fa-facebook"></span>
+                </div>
+                <div class="contact-section-sm contact-section-flex">
+                    <span class="fa fa-twitter"></span>
+                </div>
+                <div class="contact-section-sm contact-section-flex delay-05s">
+                    <span class="fa fa-instagram"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/fullpage.js"></script>
+    <script type="text/javascript">
+        new fullpage('#fullpage', {
+            menu: '#menu',
+            lazyLoad: false,
+            anchors: ['home', 'about-me', 'activity', 'contact-me']
+        });
+    </script>
+
+</body>
+
+</html>

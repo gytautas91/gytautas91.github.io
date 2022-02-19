@@ -1,0 +1,22 @@
+
+.saber {
+	position: absolute;
+    height: 200%;
+    width: 70px;
+	box-shadow: 0 0 40px 20px #fff, 0 0 100px 50px rgb(0, 183, 255);
+    left: 50%;
+    transform: rotate(45deg);
+    border-radius: 26px;
+	animation: saber-glow 5s linear infinite;
+	background-color: white;
+}
+
+@keyframes saber-glow {
+	50% {
+		opacity: 0.6;
+	}
+	100% {
+		opacity: 1;
+	}	
+  }
+

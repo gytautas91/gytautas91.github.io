@@ -1,0 +1,231 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+}
+
+/******************************
+|	Menu styles 
+*******************************/
+#menu li {
+	margin: 10px;
+	padding: 8px 16px;
+	text-transform: uppercase;
+}
+
+#menu li.active {
+	background: #ffeb3b;
+	color: rgb(0, 0, 0);
+}
+
+#menu li a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: inherit;
+}
+
+#menu li a i {
+	padding-right: 8px;
+}
+
+#menu li.active a {
+	color: #000;
+}
+
+#menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 70;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/******************************
+|	Brand logo
+*******************************/
+.brand-logo {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	text-align: center;
+}
+
+.brand-logo img {
+	width: 150px;
+}
+
+/******************************
+|	Home section
+*******************************/
+.home-section {
+	background-image: url('../images/home-section.jpg');
+	background-size: cover;
+}
+
+.home-section h1,
+.home-section h3 {
+	font-family: 'Poller One';
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.home-section h1 {
+	font-size: 120px;
+	margin-top: -200px;
+}
+
+.home-section h3 {
+	font-size: 50px;
+	animation: media-move 5s linear infinite;
+}
+
+/******************************
+|	About me section
+*******************************/
+.about-me-section {
+	margin-bottom: 14px;
+	text-transform: uppercase;
+	background: radial-gradient(ellipse at bottom, #000 0%, #090a0f 100%);
+}
+
+.about-me-container {
+	display: flex;
+	height: 100%;
+}
+
+.about-me-picture, .about-me-description {
+	flex: 1;
+	height: 100%;
+}
+
+.about-me-picture {
+	background-image: url('../images/about-me-profile.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+.about-me-content {
+	padding-top: 100px;
+	margin-left: 70px;
+}
+
+.about-me-content-point {
+	margin-bottom: 24px;
+}
+
+.about-me-content-point span:first-child {
+	padding-right: 20px;
+	display: block;
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #ffeb3b;
+}
+
+/******************************
+|	Activity section
+*******************************/
+.activity-section {}
+
+.activity-description {
+	background: #0c0717b5;
+	padding: 15px;
+	width: 60%;
+	margin: 420px auto 0 auto;
+	font-size: 28px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 100;
+	animation: media-move 5s linear infinite;
+}
+
+.activity-picture-piramid {
+	background-image: url('../images/activity-with-piramid.jpg');
+	background-size: cover;
+	position: relative;
+}
+
+.activity-picture-party {
+	background-image: url('../images/activity-party.jpg');
+	background-size: cover;
+}
+
+/******************************
+|	Contact section
+*******************************/
+.contact-section {
+	background-image: url('../images/contact-me-section.jpg');
+	background-size: cover;
+}
+
+.contact-section-flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-section-signature {
+	font-family: 'Meddon';
+	text-align: center;
+	font-size: 155px;
+	transform: rotate(296deg);
+	position: absolute;
+	right: 0%;
+	border: 39%;
+	top: 36%;
+}
+
+.contact-section-sm-container {
+	margin-top: 440px;
+	font-size: 60px;
+	color: #000;
+}
+
+.contact-section-sm {
+	width: 124px;
+	height: 124px;
+	margin: 0 40px;
+	border-radius: 50%;
+	animation: media-move 5s linear infinite;
+	background-color: #fff;
+	background-size: cover;
+	box-shadow: inset 10px 8px 20px 0px #00000075;
+}
+
+/******************************
+|	Animations
+*******************************/
+@keyframes media-move {
+	50% {
+		transform: translate(0px, 20px);
+	}
+
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+
+.delay-2s {
+	animation-delay: 2s !important;
+}
+
+.delay-05s {
+	animation-delay: 0.5s !important;
+}
+
+/******************************
+|	Full page overrides
+*******************************/
+
+.fp-prev {
+	display: none !important;
+}
+
+.fp-next {
+	border-color: transparent transparent transparent #ffeb3b !important;
+}

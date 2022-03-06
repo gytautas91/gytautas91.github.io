@@ -23,16 +23,13 @@
       embedded
       arjs="sourceType: webcam; debugUIEnabled: true;"
     >
-      <a-anchor>
-        <a-box position="0 0.5 0"></a-box>
-      </a-anchor>
-      <!-- <a-text
+      <a-text
         value="This content will always face you."
         scale="120 120 120"
         rotation="180 180 180"
         gps-entity-place="latitude: 54.7511487353918; longitude: 25.285753032457283;"
-      ></a-text> -->
-      <a-camera-static gps-camera="minDistance: 1;" rotation-reader> </a-camera-static>
+      ></a-text>
+      <a-camera gps-camera="minDistance: 1;" rotation-reader> </a-camera>
 
     </a-scene>
     <script>

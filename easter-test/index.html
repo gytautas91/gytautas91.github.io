@@ -30,7 +30,7 @@
       function getLocation() {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            alert(position)
+            console.log(position)
           });
         } else {
           alert('navigator');

@@ -40,7 +40,7 @@
       
       function getLocation() {
         if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
+          navigator.geolocation.watchPosition(function(position) {
             document.getElementById('location').innerHTML = "Lat:" + position.coords.latitude + " Long: " + position.coords.longitude
           });
         } else {

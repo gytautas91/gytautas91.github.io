@@ -35,7 +35,8 @@
     function renderBox(lat = '54.7511487353918', long = '25.285753032457283') {
       const box = document.getElementById('box');
       box.setAttribute('material', 'color: yellow');
-      box.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long};`)
+      box.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long};`);
+      box.setAttribute('look-at', '[camera]');
     }
 
     function getLocation() {

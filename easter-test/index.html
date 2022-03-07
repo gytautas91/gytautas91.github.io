@@ -21,7 +21,10 @@
 <body style="margin: 0; overflow: hidden;">
   <div id="location"></div>
   <a-scene embedded arjs="sourceType: webcam; sourceWidth: 30; sourceHeight: 20; trackingMethod: best; debugUIEnabled: false;">
-    <a-plane position="0 0 -4" rotation="-90 0 0" width="5" height="5" color="#7BC8A4" shadow shadow-material>
+    <a-cylinder 
+    
+    gps-entity-place="latitude: 54.7511487353918; longitude: 25.285753032457283;"
+    position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
 
     <!-- <a-box material="color: yellow" position="0 30 0" gps-entity-place="latitude: 54.7511487353918; longitude: 25.285753032457283;"/> -->
     <a-camera gps-camera rotation-reader> </a-camera>

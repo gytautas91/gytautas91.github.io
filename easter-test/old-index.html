@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>GeoAR.js demo</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+  <style>
+    #location {
+      position: fixed;
+      top: 0;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+  <div id="location"></div>
+  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: true;">
+    <a-box material="color: yellow" position="0 30 0" gps-entity-place="latitude: 54.7511487353918; longitude: 25.285753032457283;"/>
+    <a-camera gps-camera rotation-reader> </a-camera>
+
+  </a-scene>
+  <script>
+
+    // gps-entity-place="latitude: 54.7511487353918; longitude: 25.285753032457283;"
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(function (position) {
+
+          // document.getElementById('text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+
+          document.getElementById('location').innerHTML = "Lat:" + position.coords.latitude + " Long: " + position.coords.longitude
+        });
+      } else {
+        alert('navigator');
+      }
+    }
+
+    getLocation();
+  </script>
+</body>
+
+</html>

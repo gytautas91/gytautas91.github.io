@@ -24,7 +24,7 @@
   
 
     <a-box id="box"/>
-    <a-camera gps-camera rotation-reader> </a-camera>
+    <a-camera gps-camera rotation-reader/>
 
   </a-scene>
   <script>
@@ -35,7 +35,7 @@
     function renderBox(lat = '54.7511487353918', long = '25.285753032457283') {
       const box = document.getElementById('box');
       box.setAttribute('material', 'color: yellow');
-      box.setAttribute('position', '0 0 0')
+      box.setAttribute('position', '0 1.6 0')
       // box.setAttribute('gps-entity-place', `latitude: ${lat}; longitude: ${long};`);
       box.setAttribute('look-at', '[camera]');
     }

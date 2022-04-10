@@ -1,0 +1,307 @@
+:root {
+  --main-color: #c7acc1;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+/******************************
+|	Menu styles 
+*******************************/
+#menu li {
+  margin: 10px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+}
+
+#menu li.active {
+  background: var(--main-color);
+  color: rgb(0, 0, 0);
+}
+
+#menu li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+
+#menu li a i {
+  padding-right: 8px;
+  font-size: 35px;
+}
+
+#menu li.active a {
+  color: #000;
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/******************************
+|	Brand logo
+*******************************/
+.brand-logo {
+  width: 100%;
+  position: absolute;
+  top: 15px;
+  z-index: 2;
+  text-align: center;
+}
+
+.brand-logo img {
+  width: 150px;
+}
+
+/******************************
+|	Home section
+*******************************/
+.home-section {
+  background-image: url("../images/IMG_9690.JPG");
+  background-size: cover;
+}
+
+.home-section h1,
+.home-section h3 {
+  font-family: "Poller One";
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+.home-section h1 {
+  font-size: 145px;
+}
+
+.home-section h3 {
+  font-size: 50px;
+  animation: media-move 5s linear infinite;
+}
+
+.marina-container {
+  position: relative;
+  top: 190px;
+}
+
+/******************************
+|	About me section
+*******************************/
+.about-me-section {
+  margin-bottom: 14px;
+  background: radial-gradient(ellipse at bottom, #000 0%, #090a0f 100%);
+}
+
+.about-me-container {
+  display: flex;
+  height: 100%;
+}
+
+.about-me-picture,
+.about-me-description {
+  flex: 1;
+  height: 100%;
+  font-size: 24px;
+}
+
+.about-me-picture {
+  background-image: url("../images/IMG_9700.JPG");
+  background-position: center;
+  background-size: cover;
+}
+
+.about-me-content {
+  padding: 110px 35px 0 70px;
+}
+
+.about-me-content-point {
+  margin-bottom: 24px;
+}
+
+.about-me-content-point span:first-child {
+  padding-right: 20px;
+  display: block;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.fp-tableCell {
+  position: relative;
+  top: 0;
+}
+
+/******************************
+|	Activity section
+*******************************/
+.activity-section {
+}
+
+.activity-description {
+  background: #0c0717b5;
+  padding: 15px;
+  width: 60%;
+  margin: 420px auto 0 auto;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 100;
+  animation: media-move 5s linear infinite;
+}
+
+.activity-picture-piramid {
+  background-image: url("../images/IMG_9701.JPG");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.activity-picture-party {
+  background-image: url("../images/IMG_9704.JPG");
+  background-size: cover;
+  background-position: center 65%;
+}
+.activity-picture-office {
+  background-image: url("../images/IMG_9695.JPG");
+  background-size: cover;
+  background-position: center 65%;
+}
+.activity-picture-glasses {
+  background-image: url("../images/IMG_9689.JPG");
+  background-size: cover;
+  background-position: center 16%;
+}
+
+/******************************
+|	Contact section
+*******************************/
+.contact-section {
+  background-image: url("../images/IMG_9691.JPG");
+  background-size: cover;
+}
+
+.contact-section-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-section-signature {
+  font-family: "Meddon";
+  text-align: center;
+  font-size: 50px;
+  transform: rotate(-19deg);
+  position: absolute;
+  right: 0%;
+  bottom: 14%;
+}
+
+.contact-section-sm-container {
+  margin-top: 440px;
+  font-size: 60px;
+}
+
+.contact-section-sm-container a {
+  color: white;
+  text-decoration: none;
+}
+.contact-section-sm-container a:hover {
+  background: #957e90;
+}
+
+.contact-section-sm {
+  width: 100px;
+  height: 100px;
+  margin: 0 40px;
+  border-radius: 50%;
+  animation: media-move 5s linear infinite;
+  background-color: var(--main-color);
+  background-size: cover;
+}
+
+/******************************
+|	Animations
+*******************************/
+@keyframes media-move {
+  50% {
+    transform: translate(0px, 20px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.delay-2s {
+  animation-delay: 2s !important;
+}
+
+.delay-05s {
+  animation-delay: 0.5s !important;
+}
+
+/******************************
+|	Full page overrides
+*******************************/
+
+.fp-prev {
+  display: none !important;
+}
+
+.fp-next {
+  border-color: transparent transparent transparent var(--main-color) !important;
+}
+
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    color: black;
+    font-family: "Poller One";
+    text-align: center;
+    padding: 30px;
+    font-size: 40px;
+    background: var(--main-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .plz-desktop {
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .logo-img-mobile {
+    width: 80%;
+  }
+
+  .mobile-container {
+    position: relative;
+    top: -10%;
+  }
+}
